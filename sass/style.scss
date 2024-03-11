@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 //*** グローバル変数 ***//
-$mainColor: rgb(53, 56, 58);  // 文字色
+$mainColor: #333;  // 文字色
 
 //*** mixin ***//
 @mixin flexMode($justify) {
@@ -12,102 +12,174 @@ $mainColor: rgb(53, 56, 58);  // 文字色
 
 *    { box-sizing: border-box; }
 html { font-size: 100%; }
-body {
-    font-family: "Noto Serif JP", serif;
-    color: rgb(53, 56, 58);
-    background-color: #EFEDED;
-    }
+body { 
+    font-family: "Meiryo"; 
+    color: $mainColor; 
+    background-color: #EFEDED; 
+}
 img  { max-width: 100%; vertical-align: bottom; }
 li   { list-style: none; }
 a    { text-decoration: none; }
-
-
-
+/* 横幅を設定するための共通クラス */
 .container {
     max-width: 1000px;
-    margin: 100px auto;      
-    height: 698px;
-    position: relative;
-    
+    margin: 100px auto; 
+    position: relative;  
+
     .text {
+        padding: 90px 160px 80px 80px;
         background-color: #fff;
         max-width: 680px;
-        padding: 90px 160px 90px 80px;
-        position: absolute;
-        left: 0;
-        
-        h1 {
-            display: inline-block;
-            font-size: 1.875rem;
-            font-weight: 400;
-            line-height: 38px;
-            border-bottom: 1px solid #000;
-        }
-        .text1 {
-            font-size: 2.3rem;
-            line-height: 54px;
-            margin-top: 40px;
-            max-width: 680px;
-        }
-            
-        p {
-            font-size: 1.05rem;
-            line-height: 29px;
-            margin-top: 40px;
-        }
-            
-        button {
-            margin-top: 40px;
-            padding: 15px 55px;
-            border: 1px solid #000;
-            border-radius: 50px;
-            transition: all 0.4s;
-            &:hover{
-            background-color: #e0e0e0;
-            }
-        }         
+        height: 700px;
     }
 
     img {
-    width: 400px;
-    position: absolute;
-    top: 50%;
-    right: 2%;
-    transform: translateY(-50%);
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
     }
 }
 
-    
 
-  
-  /* レスポンシブ・ブレークポイント1001px
-  ------------------------------- */
-  @media screen and (max-width: 1000px) {
+/* /ここまで共通設定 */
+
+
+
+/* レスポンシブ・ブレークポイント1000px
+------------------------------- */
+@media screen and (max-width:999px) {
     .container {
         margin: 0;
-        background-color: #fff;
         position: static;
-        height: auto;
 
         .text {
-            max-width: 100%;
-            padding: 70px 20px 60px;
-        }
-    }
-    .container img {
-        width: 100%;
-        position: static; /* ここで position: static; を指定する */
-        transform: translateY(0%);
-    }
-    .container .text {
-        width: 100%;    
-        position: static;   
-        .text1 {
+            width: 100%;
             height: auto;
+            padding: 70px 20px 60px;
+        }@charset "UTF-8";
+
+        //*** グローバル変数 ***//
+        $mainColor: rgb(53, 56, 58);  // 文字色
+        
+        //*** mixin ***//
+        @mixin flexMode($justify) {
+            display: flex;
+            justify-content: $justify;
+            align-items: center;
+        }
+        
+        *    { box-sizing: border-box; }
+        html { font-size: 100%; }
+        body {
+            font-family: "Noto Serif JP", serif;
+            color: rgb(53, 56, 58);
+            background-color: #EFEDED;
+            }
+        img  { max-width: 100%; vertical-align: bottom; }
+        li   { list-style: none; }
+        a    { text-decoration: none; }
+        
+        
+        
+        .container {
+            max-width: 1000px;
+            margin: 100px auto;      
+            height: 698px;
+            position: relative;
+            
+            .text {
+                background-color: #fff;
+                max-width: 680px;
+                padding: 90px 160px 90px 80px;
+                position: absolute;
+                left: 0;
+                
+                h1 {
+                    display: inline-block;
+                    font-size: 1.875rem;
+                    font-weight: 400;
+                    line-height: 38px;
+                    border-bottom: 1px solid #000;
+                }
+                .text1 {
+                    font-size: 2.3rem;
+                    line-height: 54px;
+                    margin-top: 40px;
+                    max-width: 680px;
+                }
+                    
+                p {
+                    font-size: 1.05rem;
+                    line-height: 29px;
+                    margin-top: 40px;
+                }
+                    
+                button {
+                    margin-top: 40px;
+                    padding: 15px 55px;
+                    border: 1px solid #000;
+                    border-radius: 50px;
+                    transition: all 0.4s;
+                    &:hover{
+                    background-color: #e0e0e0;
+                    }
+                }         
+            }
+        
+            img {
+            width: 400px;
+            position: absolute;
+            top: 50%;
+            right: 2%;
+            transform: translateY(-50%);
+            }
+        }
+        
+            
+        
+          
+          /* レスポンシブ・ブレークポイント1001px
+          ------------------------------- */
+          @media screen and (max-width: 1000px) {
+            .container {
+                margin: 0;
+                background-color: #fff;
+                position: static;
+                height: auto;
+        
+                .text {
+                    max-width: 100%;
+                    padding: 70px 20px 60px;
+                }
+            }
+            .container img {
+                width: 100%;
+                position: static; /* ここで position: static; を指定する */
+                transform: translateY(0%);
+            }
+            .container .text {
+                width: 100%;    
+                position: static;   
+                .text1 {
+                    height: auto;
+                }
+            }
+        }
+        
+          /*-------------------------------------------
+          
+          -------------------------------------------*/
+
+        img {
+            width: 100%;
+            position: static;
+            transform: translateY(0%);
         }
     }
+    
 }
+/*-------------------------------------------
 
-  /*-------------------------------------------
-  
-  -------------------------------------------*/
+-------------------------------------------*/

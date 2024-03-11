@@ -8,8 +8,8 @@ html {
 }
 
 body {
-  font-family: "Noto Serif JP", serif;
-  color: rgb(53, 56, 58);
+  font-family: "Meiryo";
+  color: #333;
   background-color: #EFEDED;
 }
 
@@ -26,79 +26,144 @@ a {
   text-decoration: none;
 }
 
+/* 横幅を設定するための共通クラス */
 .container {
   max-width: 1000px;
   margin: 100px auto;
-  height: 698px;
   position: relative;
 }
 .container .text {
+  padding: 90px 160px 80px 80px;
   background-color: #fff;
   max-width: 680px;
-  padding: 90px 160px 90px 80px;
-  position: absolute;
-  left: 0;
-}
-.container .text h1 {
-  display: inline-block;
-  font-size: 1.875rem;
-  font-weight: 400;
-  line-height: 38px;
-  border-bottom: 1px solid #000;
-}
-.container .text .text1 {
-  font-size: 2.3rem;
-  line-height: 54px;
-  margin-top: 40px;
-  max-width: 680px;
-}
-.container .text p {
-  font-size: 1.05rem;
-  line-height: 29px;
-  margin-top: 40px;
-}
-.container .text button {
-  margin-top: 40px;
-  padding: 15px 55px;
-  border: 1px solid #000;
-  border-radius: 50px;
-  transition: all 0.4s;
-}
-.container .text button:hover {
-  background-color: #e0e0e0;
+  height: 700px;
 }
 .container img {
   width: 400px;
   position: absolute;
   top: 50%;
-  right: 2%;
+  right: 20px;
   transform: translateY(-50%);
 }
 
-/* レスポンシブ・ブレークポイント1001px
+/* /ここまで共通設定 */
+/* レスポンシブ・ブレークポイント1000px
 ------------------------------- */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 999px) {
   .container {
+    margin: 0;
+    position: static;
+    @charset "UTF-8";
+    /* レスポンシブ・ブレークポイント1001px
+    ------------------------------- */
+    /*-------------------------------------------
+
+    -------------------------------------------*/
+  }
+  .container .text {
+    width: 100%;
+    height: auto;
+    padding: 70px 20px 60px;
+  }
+  .container * {
+    box-sizing: border-box;
+  }
+  .container html {
+    font-size: 100%;
+  }
+  .container body {
+    font-family: "Noto Serif JP", serif;
+    color: rgb(53, 56, 58);
+    background-color: #EFEDED;
+  }
+  .container img {
+    max-width: 100%;
+    vertical-align: bottom;
+  }
+  .container li {
+    list-style: none;
+  }
+  .container a {
+    text-decoration: none;
+  }
+  .container .container {
+    max-width: 1000px;
+    margin: 100px auto;
+    height: 698px;
+    position: relative;
+  }
+  .container .container .text {
+    background-color: #fff;
+    max-width: 680px;
+    padding: 90px 160px 90px 80px;
+    position: absolute;
+    left: 0;
+  }
+  .container .container .text h1 {
+    display: inline-block;
+    font-size: 1.875rem;
+    font-weight: 400;
+    line-height: 38px;
+    border-bottom: 1px solid #000;
+  }
+  .container .container .text .text1 {
+    font-size: 2.3rem;
+    line-height: 54px;
+    margin-top: 40px;
+    max-width: 680px;
+  }
+  .container .container .text p {
+    font-size: 1.05rem;
+    line-height: 29px;
+    margin-top: 40px;
+  }
+  .container .container .text button {
+    margin-top: 40px;
+    padding: 15px 55px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    transition: all 0.4s;
+  }
+  .container .container .text button:hover {
+    background-color: #e0e0e0;
+  }
+  .container .container img {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+  }
+}
+@media screen and (max-width: 999px) and (max-width: 1000px) {
+  .container .container {
     margin: 0;
     background-color: #fff;
     position: static;
     height: auto;
   }
-  .container .text {
+  .container .container .text {
     max-width: 100%;
     padding: 70px 20px 60px;
   }
-  .container img {
+  .container .container img {
     width: 100%;
     position: static; /* ここで position: static; を指定する */
     transform: translateY(0%);
   }
-  .container .text {
+  .container .container .text {
     width: 100%;
     position: static;
   }
-  .container .text .text1 {
+  .container .container .text .text1 {
     height: auto;
+  }
+}
+@media screen and (max-width: 999px) {
+  .container img {
+    width: 100%;
+    position: static;
+    transform: translateY(0%);
   }
 }
 /*-------------------------------------------
